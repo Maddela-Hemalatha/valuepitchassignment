@@ -16,7 +16,7 @@ person.create = async (req, res) => {
         const schema = Joi.object().keys({
             name: Joi.string().min(3).max(50).required(),
             email: Joi.string().email({ minDomainSegments: 2 }).required().pattern(new RegExp('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$')),
-            // dob: Joi.string().required(),
+            dob: Joi.string().required(),
             avatar: Joi.string().required(),
             address: Joi.string().max(50).required(),
             country: Joi.string().required()
